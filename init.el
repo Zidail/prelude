@@ -1,4 +1,4 @@
-;;; init.el --- Prelude's configuration entry point.
+; init.el --- Prelude's configuration entry point.
 ;;
 ;; Copyright (c) 2011-2016 Bozhidar Batsov
 ;;
@@ -131,5 +131,79 @@ by Prelude.")
 (prelude-eval-after-init
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
+
+(require 'rainbow-mode)
+(add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
+(add-hook 'html-mode-hook (lambda () (rainbow-mode 1)))
+(add-hook 'web-mode-hook (lambda () (rainbow-mode 1)))
+
+
+(global-linum-mode t)
+(helm-mode 1)
+
+(require 'git-gutter)
+(global-git-gutter-mode 1)
+(git-gutter:linum-setup)
+
+(require 'linum-relative)
+(linum-relative-global-mode)
+(setq linum-relative-current-symbol "")
+
+;; use web-mode for .jsx and .js files
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq tab-width 2)
+(setq ruby-indent-level 2)
+(setq js-indent-level 2)
+(setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2)
+(setq javascript-indent-level 2)
+(setq-default js2-basic-offset 2)
+(custom-set-variables '(coffee-tab-width 2))
+(setq evil-shift-width 2)
+(auto-complete-mode 1)
+(global-auto-complete-mode 1)
+(setq helm-M-x-fuzzy-match t)
+
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+
+(require 'ido-vertical-mode)
+(ido-vertical-mode)
+
+;; http://www.flycheck.org/manual/latest/index.html
+(require 'flycheck)
+
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; adjust indents for web-mode to 2 spaces
+(defun my-web-mode-hook ()
+  "Hooks for Web mode. Adjust indents"
+  ;;; http://web-mode.org/
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
+;; for better jsx syntax-highlighting in web-mode
+;; - courtesy of Patrick @halbtuerke
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+    (let ((web-mode-enable-part-face nil))
+      ad-do-it)
+    ad-do-it))
 
 ;;; init.el ends here
