@@ -1,5 +1,9 @@
 (require 'doom-themes)
 
+;; Disable default theme
+(disable-theme 'zenburn)
+(setq prelude-theme nil)
+
 ;;; Settings (defaults)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t  ; if nil, italics is universally disabled

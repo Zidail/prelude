@@ -145,6 +145,7 @@ by Prelude.")
 ;; Set up load path
 (add-to-list 'load-path settings-dir)
 
+;; Setup Personal Preferences
 (require 'preferences)
 
 (global-linum-mode t)
@@ -164,11 +165,7 @@ by Prelude.")
 ;; disable mouse mode in gui
 (global-disable-mouse-mode)
 
-;; Setup themes
-(require 'themes)
-
 ;; Setup key bindings
 (require 'key-bindings)
-
 
 ;;; init.el ends here
