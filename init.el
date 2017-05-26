@@ -148,24 +148,6 @@ by Prelude.")
 (require 'preferences)
 
 (global-linum-mode t)
-(helm-mode 1)
-
-(require 'git-gutter)
-(global-git-gutter-mode 1)
-(git-gutter:linum-setup)
-
-(require 'linum-relative)
-(linum-relative-global-mode)
-(setq linum-relative-current-symbol "")
-
-(auto-complete-mode 1)
-(global-auto-complete-mode 1)
-(setq helm-M-x-fuzzy-match t)
-
-(add-hook 'ruby-mode-hook #'rubocop-mode)
-
-(require 'ido-vertical-mode)
-(ido-vertical-mode)
 
 ;; Setup self added packages
 (require 'setup-flycheck)
