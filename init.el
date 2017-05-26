@@ -139,7 +139,13 @@ by Prelude.")
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
-(require 'preferences')
+;; Set path to dependencies
+(setq settings-dir
+      (expand-file-name "settings" user-emacs-directory))
+;; Set up load path
+(add-to-list 'load-path settings-dir)
+
+(require 'preferences)
 
 (global-linum-mode t)
 (helm-mode 1)
