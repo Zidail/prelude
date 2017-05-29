@@ -4,6 +4,9 @@
 (disable-theme 'zenburn)
 (setq prelude-theme nil)
 
+; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+; (load-theme 'outrun t)
+
 ;;; Settings (defaults)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t  ; if nil, italics is universally disabled
