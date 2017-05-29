@@ -17,4 +17,14 @@
 (custom-set-variables '(coffee-tab-width 2))
 (setq evil-shift-width 2)
 
+;; Enable Fuzy Matching for Helm Meta-X
+(setq helm-M-x-fuzzy-match t)
+
+;; Set Line width
+(setq whitespace-line-column 119)
+(setq-default fill-column 120)
+
+;; Enable Projectile Caching
+(setq projectile-enable-caching t)
+
 (provide 'preferences)
