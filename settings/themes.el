@@ -16,7 +16,10 @@
       doom-one-brighter-comments nil)
 
 ;; Load the theme (doom-one, doom-dark, etc.)
-(load-theme 'doom-one t)
+;;(load-theme 'doom-one t)
+
+;; Load material theme
+(load-theme 'material t)
 
 ;;; OPTIONAL
 ;; brighter source buffers (that represent files)
