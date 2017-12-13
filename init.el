@@ -155,6 +155,7 @@ by Prelude.")
 (require 'setup-neo-tree)
 (require 'setup-rainbow-mode)
 (require 'setup-web-mode)
+(require 'setup-ruby-mode)
 
 ;; add all-the-icons
 (require 'all-the-icons)
