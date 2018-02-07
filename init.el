@@ -156,6 +156,7 @@ by Prelude.")
 (require 'setup-rainbow-mode)
 (require 'setup-web-mode)
 (require 'setup-ruby-mode)
+(require 'setup-multiple-cursors)
 
 ;; add all-the-icons
 (require 'all-the-icons)
@@ -165,6 +166,9 @@ by Prelude.")
 
 ;; disable mouse mode in gui
 (global-disable-mouse-mode)
+
+;; enable displaying emojis
+(add-hook 'after-init-hook #'global-emojify-mode)
 
 ;; Setup key bindings
 (require 'key-bindings)
