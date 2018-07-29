@@ -41,3 +41,8 @@
 
 ;; Disable Scrollbar
 (scroll-bar-mode -1)
+
+;; Make titlebar transparent
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
