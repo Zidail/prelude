@@ -46,3 +46,6 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (setq ns-use-proxy-icon nil)
 (setq frame-title-format nil)
+
+;; Set Default Font
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-13"))
