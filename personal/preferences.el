@@ -1,7 +1,8 @@
 ;; Replace the default theme
+(setq prelude-theme nil)
 (disable-theme 'zenburn)
-(load-theme 'Laser)
-(setq prelude-theme 'Laser)
+(load-theme 'monokai)
+(setq prelude-theme 'monokai)
 
 ;; Enable Fuzy Matching for Helm Meta-X
 (setq helm-M-x-fuzzy-match t)
