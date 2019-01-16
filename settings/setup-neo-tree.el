@@ -26,5 +26,6 @@
 ;;(setq neo-theme 'icons)
 ;;(setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-smart-open t)
+(setq-default neo-show-hidden-files t)
 
 (provide 'setup-neo-tree)
